@@ -30,7 +30,7 @@ QVector<QVector<qint8>> Solver::generateSeq(qint8 size) {
 }
 
 TruthTable Solver::solveExpr(Expr expr_parsed, QString expr) {
-    qint16 size = expr.length();
+
 
     TruthTable table;
     table.vars_number_of = expr_parsed.vars_number_of;
@@ -47,6 +47,7 @@ TruthTable Solver::solveExpr(Expr expr_parsed, QString expr) {
             vtb.value = seq[pack][pos];
             vars_pack.data.append(vtb);
         }
+        qint16 size = new_expr.length();
         for (qint8 i = 0;i < size; i+=2) {
 
             if (new_expr[i + 1] == '+') {
@@ -72,7 +73,7 @@ TruthTable Solver::solveExpr(Expr expr_parsed, QString expr) {
                     new_expr[i + 2] = '1';
             }
         }
-        vars_pack.result = new_expr[size - 1].toLatin1() - '0';
+        vars_pack.result = new_expr.mid(size-1,size-1).toInt();;
         table.table.append(vars_pack);
 
     }
