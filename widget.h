@@ -26,5 +26,12 @@ private:
 
     Parser *parser;
     Solver *solver;
+
+    Expr expr_parsed;
+    TruthTable table;
+    KMap KMaptable;
+    void CreateTruthTable();
+    void InitKMap();
+    void CreateKMapTable();
 };
 #endif // WIDGET_H

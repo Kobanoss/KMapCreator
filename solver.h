@@ -9,7 +9,7 @@ public:
     Solver();
 
     QVector<QVector<qint8>> generateSeq(qint8 size);
-    TruthTable solveExpr(Expr expr_parsed, QString expr);
+    TruthTable solveExpr(Expr expr_parsed);
 };
 
 #endif // WIDGET_H
