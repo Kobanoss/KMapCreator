@@ -24,7 +24,16 @@ private slots:
 private:
     Ui::Widget *ui;
 
+
+    // Объекты классов парсера и солвера
     Parser *parser;
     Solver *solver;
+
+    Expr expr_parsed;
+    TruthTable table;
+    // Функция, занимающаяся созданием и заполнением таблицы истинности
+    void CreateTruthTable();
+    // Функция, занимающаяся созданием и заполнением карты Карно
+    void CreateKMapTable();
 };
 #endif // WIDGET_H

@@ -2,8 +2,9 @@
 
 #include <QApplication>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
+
+    // Создание и вызов окна
     QApplication a(argc, argv);
     Widget w;
     w.show();
